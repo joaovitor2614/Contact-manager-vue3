@@ -1,0 +1,41 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap');
+
+.add-container {
+    background-color: #FFF;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px 0 rgba(#999, .25rem);
+    margin: 2rem auto;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 500px;
+    padding: .75rem;
+}
+
+.add-container__img {
+  border-radius: 8px;
+  overflow: hidden;
+  padding-bottom: 55%;
+  background-image: url('https://eyesofodysseus.files.wordpress.com/2014/02/wpid-2014-02-17-00-46-15.png');
+  background-repeat: no-repeat;
+  background-size: 150%;
+  background-position: 0 5%;
+  position: relative;
+}
+
+.add-container__heading {
+    position: absolute;
+    left: 10%;
+    top: 15%;
+    right: 10%;
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: rgb(199, 199, 199);
+    line-height: 1.222;
+    small {
+        display: block;
+        font-size: .75rem;
+        font-weight: 400;
+        margin-top: .25rem;
+    }
+}

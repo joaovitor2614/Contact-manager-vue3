@@ -1,12 +1,9 @@
 import { createStore } from 'vuex'
+import contactModule from '../modules/contact'
 
 export default createStore({
-  state: {
-  },
-  mutations: {
-  },
-  actions: {
-  },
+
   modules: {
+    contacts: contactModule
   }
 })

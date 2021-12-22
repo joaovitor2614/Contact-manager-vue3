@@ -1,0 +1,16 @@
+.action-btn {
+    cursor: pointer;
+    background-color: #6658d3;
+    border-radius: 6px;
+    border: 0;
+    color: #FFF;
+    font: inherit;
+    font-size: 1.25rem;
+    font-weight: 500;
+    padding: 1em;
+    width: 100%;
+}
+
+.action-btn:focus {
+    outline: 0;
+}

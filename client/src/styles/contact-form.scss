@@ -1,0 +1,25 @@
+.contact-form {
+    padding: 2rem 1rem 0;
+}
+
+.contact-form__input {
+    display: flex;
+    flex-direction: column-reverse;
+    position: relative;
+    padding-top: 1.5rem;
+    &+.contact-form__input {
+		margin-top: 1.5rem;
+	}
+}
+
+.contact-form__action {
+    margin-top: 2rem;
+}
+
+.contact-form__group {
+    display: flex;
+    flex-direction: row;
+    &>div:first-child {
+        margin-right: 20px;
+    }
+}
