@@ -68,13 +68,13 @@ export default {
         lastName: '',
         email: '',
         address: '',
-        phone: '',
+        phone:  '',
       }
 
     }
   },
   methods: {
-    ...mapActions(["createContact"]),
+    ...mapActions(["createContact, editContact"]),
   }
 }
 </script>

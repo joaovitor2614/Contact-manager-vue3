@@ -3,13 +3,13 @@
   <div class="add-container">
       <div class="add-container__img">
           <h2 class="add-container__heading">
-              Create Contact {{ isLoading }}<small></small>
+              Edit contact<small></small>
 
           </h2>
       </div>
 
-    <ContactForm :handleSubmit="handleSubmit"  />
-    <Loading v-if='this.$store.state.contacts.isLoading'  />
+    <ContactForm :handleSubmit="handleSubmit" :contact="contact" />
+    <Loading v-if='this.$store.state.contacts.isLoading' />
 
 
 
@@ -26,16 +26,21 @@ import { mapState } from 'vuex'
 
 export default {
     components: { ContactForm, Loading },
-    computed: {
+    created() {
+          const id = this.$route.params.id;
+
+    },
+      computed: {
           ...mapState(["isLoading"])
       },
 
 
 
+
     methods: {
       handleSubmit(data) {
-         console.log(data)
-         createContact(data)
+
+         editedContact(data)
       },
 
     },

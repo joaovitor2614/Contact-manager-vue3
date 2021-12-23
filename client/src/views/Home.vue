@@ -1,9 +1,14 @@
 <template>
 
-  <h1>oajsdasjdo</h1>
+  <div class="home__cards">
 
+    <ContactCard
+      v-for="(contact, i) in contacts"
+      :key="i"
+      :contact="contact"
 
-
+      />
+  </div>
 
 
 
@@ -18,13 +23,18 @@ import { mapState } from 'vuex'
 
 export default {
 
+  computed: {
+    contacts() {
+      return this.$store.state.contacts.contacts
+    }
+  },
+
   name: 'Home',
    components: {
      ContactCard
    },
-   computed: {
-          ...mapState(["contacts"])
-        },
+
+
 
 }
 </script>

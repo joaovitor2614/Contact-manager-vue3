@@ -27,5 +27,6 @@
     "> 1%",
     "last 2 versions",
     "not dead"
-  ]
+  ],
+  "rules": {"vue/no-multiple-template-root": "off" }
 }

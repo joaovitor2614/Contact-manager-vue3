@@ -1,7 +1,7 @@
 .contact-card {
-    background-color: white;
+
     border: 10px;
-    cursor: pointer;
+
     box-shadow: 0 8px 30px rgba(0, 0, 0, .3);
     display: flex;
     flex-flow: column;
@@ -13,6 +13,8 @@
     z-index: -99;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     transition: ease 0.3s;
+    cursor: pointer;
+
 
 }
 
@@ -57,13 +59,14 @@
 .contact-card__footer {
     background: linear-gradient(90deg, #474747 0%, #1a1919 100%);
     border-radius: 0 0 10px 10px;
-    height: 180px;
+    height: 200px;
     position: relative;
 }
 
 .contact-card__footer-name {
-    color: white;
+
     position: absolute;
+
     top: 93%;
     left: 50%;
     font-size: 1.5rem;
