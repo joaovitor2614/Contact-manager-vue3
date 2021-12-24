@@ -29,7 +29,12 @@ const contactModule = {
                  state.contacts.map(contact => contact._id == payload._id
                   ? {...payload} : contact)
 
-        }
+        },
+        deleteContact(state, payload) {
+            console.log('state c', state.contacts)
+            state.contacts = state.contacts.filter(contact => contact._id !== payload)
+
+   }
     },
 
     actions: {
@@ -58,7 +63,16 @@ const contactModule = {
         context.commit('setLoadingOff');
 
         context.commit('editContact', data);
-   }
+   },
+    async removeContact(context, id) {
+        console.log('asasd')
+        context.commit('setLoading');
+        context.commit('deleteContact', id);
+        await axios.delete(`http://localhost:5000/api/contact/${id}`)
+        context.commit('setLoadingOff');
+
+
+}
     }
 }
 

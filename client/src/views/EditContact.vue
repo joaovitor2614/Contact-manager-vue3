@@ -1,5 +1,5 @@
 
-<template>
+<template v-cloack>
   <div class="add-container">
       <div class="add-container__img">
           <h2 class="add-container__heading">
@@ -8,7 +8,7 @@
           </h2>
       </div>
 
-    <ContactForm :handleSubmit="handleSubmit" :contact="contact" />
+    <ContactForm :handleSubmit="handleSubmit" />
     <Loading v-if='this.$store.state.contacts.isLoading' />
 
 
@@ -26,12 +26,16 @@ import { mapState } from 'vuex'
 
 export default {
     components: { ContactForm, Loading },
-    created() {
-          const id = this.$route.params.id;
-
-    },
       computed: {
-          ...mapState(["isLoading"])
+          ...mapState(["isLoading"]),
+          contactToEdit() {
+            const id = this.$route.params.id;
+            const contacts = this.$store.state.contacts.contacts;
+            console.log(contacts)
+            const contactId = contacts.find(contact => contact._id == id);
+
+            return contactId
+          }
       },
 
 

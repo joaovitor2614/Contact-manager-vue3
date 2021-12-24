@@ -1,6 +1,14 @@
 <template>
 
    <div class="contact-card">
+       <div
+       @click="removeContact(contact._id)"
+       class="action-btn
+       action-btn--small"
+       >
+         Remover
+
+       </div>
        <div class="contact-card__info">
             <p><span>Phone: </span>{{ contact.phone }}</p>
             <p><span>Address: </span>{{ contact.address }}</p>
@@ -18,9 +26,11 @@
 </template>
 
 <script>
+
   export default {
-      props: ['contact'],
+      props: ['contact', 'removeContact'],
       name: 'ContactCard',
+
 
 
 

@@ -40,6 +40,7 @@
 
     </div>
 
+
     <div class="contact-form__input">
        <input v-model="contactData.phone" type="text" class="input-field" />
        <label class="input-label">Phone number</label>
@@ -50,7 +51,7 @@
 
 
     <div class="contact-form__action">
-      <button class="action-btn">
+      <button class="action-btn" disabled="isLoading">
              Adicionar contato
       </button>
     </div>
@@ -60,7 +61,7 @@
 <script>
 import { mapActions } from 'vuex'
 export default {
-  props: ['handleSubmit'],
+  props: ['handleSubmit', 'isLoading'],
   data() {
     return {
       contactData: {
@@ -73,6 +74,7 @@ export default {
 
     }
   },
+
   methods: {
     ...mapActions(["createContact, editContact"]),
   }

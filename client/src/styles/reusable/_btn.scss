@@ -14,3 +14,12 @@
 .action-btn:focus {
     outline: 0;
 }
+
+.action-btn--small {
+   font-size: 0.85rem;
+   background-color: rgb(34, 33, 33);
+   border-radius: 5px;
+   width: 90px;
+   margin-left: auto;
+
+}

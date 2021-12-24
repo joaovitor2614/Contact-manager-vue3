@@ -80,9 +80,7 @@ router.delete('/:contact_id', async (req, res) => {
         if (!contact) {
             return res.status(400).json({ errors: [{ msg: 'Contact was not found' }] })
         }
-        if (contact.user.toString() !== req.user.id) {
-            return res.status(400).json({ errors: [{ msg: 'Authorization denied' }] })
-        }
+
         await contact.remove();
         res.json({ msg: 'Contact was removed' });
     } catch (err) {
@@ -102,9 +100,7 @@ router.put('/:contact_id', async (req, res) => {
         if (!contact) {
             return res.status(400).json({ errors: [{ msg: 'Contact was not found' }] })
         }
-        if (contact.user.toString() !== req.user.id) {
-            return res.status(400).json({ errors: [{ msg: 'Authorization denied' }] })
-        }
+
         await Contact.findOneAndUpdate({ _id: contact_id}, req.body);
         const newContact = await Contact.findById(contact_id)
         res.json(newContact);

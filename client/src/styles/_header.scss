@@ -1,0 +1,50 @@
+
+header {
+    color: rgb(59, 59, 59);
+    height: 20vh;
+    margin-bottom: 70px;
+
+
+
+}
+
+
+
+.header__container {
+    position: absolute;
+    left: 0;
+    right: 0;
+    z-index: 1;
+}
+
+.header__title {
+    font-size: 3.2rem;
+    margin-bottom: 2rem;
+    word-spacing: 4px;
+    padding: 0 80px;
+    text-decoration: none;
+    > a {
+        text-decoration: none;
+        color: rgb(59, 59, 59);
+    }
+}
+
+
+
+.header__link {
+    font-size: 1rem;
+    word-spacing: 3px;
+    font-weight: 300;
+    > a {
+        text-decoration: none;
+        color: rgb(59, 59, 59);
+    }
+}
+
+.header__content {
+    align-items: center;
+    display: flex;
+    &>h2:first-child {
+        margin-right: 40%;
+    }
+}

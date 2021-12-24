@@ -26,9 +26,6 @@ import { mapState } from 'vuex'
 
 export default {
     components: { ContactForm, Loading },
-    computed: {
-          ...mapState(["isLoading"])
-      },
 
 
 
