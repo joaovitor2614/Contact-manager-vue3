@@ -3,12 +3,12 @@
   <div class="add-container">
       <div class="add-container__img">
           <h2 class="add-container__heading">
-              Create Contact {{ isLoading }}<small></small>
+              Create Contact<small></small>
 
           </h2>
       </div>
 
-    <ContactForm :handleSubmit="handleSubmit"  />
+    <ContactForm :handleSubmit="handleSubmit" :isLoading="this.$store.state.contacts.isLoading"  />
     <Loading v-if='this.$store.state.contacts.isLoading'  />
 
 
@@ -22,7 +22,7 @@
 <script>
 import Loading from '../components/Loading.vue'
 import ContactForm from '../components/ContactForm.vue'
-import { mapState } from 'vuex'
+import { mapActions } from 'vuex'
 
 export default {
     components: { ContactForm, Loading },
@@ -34,6 +34,9 @@ export default {
          console.log(data)
          createContact(data)
       },
+        methods: {
+    ...mapActions(["createContact"]),
+  }
 
     },
 

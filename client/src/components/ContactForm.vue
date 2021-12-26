@@ -1,6 +1,6 @@
 
 <template>
-  <form class="contact-form" @submit.prevent="createContact(contactData)">
+  <form class="contact-form" @submit.prevent="handleSubmit(contactData)">
     <div class="contact-form__group">
       <div class="contact-form__input">
           <input
@@ -51,7 +51,13 @@
 
 
     <div class="contact-form__action">
-      <button class="action-btn" disabled="isLoading">
+      <button
+      class="action-btn"
+      :disabled="isLoading"
+
+
+
+      >
              Adicionar contato
       </button>
     </div>

@@ -8,7 +8,12 @@
           </h2>
       </div>
 
-    <ContactForm :handleSubmit="handleSubmit" />
+    <ContactForm
+    :handleSubmit="handleSubmit"
+    :isLoading="this.$store.state.contacts.isLoading"
+
+
+    />
     <Loading v-if='this.$store.state.contacts.isLoading' />
 
 
@@ -25,29 +30,26 @@ import ContactForm from '../components/ContactForm.vue'
 import { mapState } from 'vuex'
 
 export default {
+
     components: { ContactForm, Loading },
-      computed: {
-          ...mapState(["isLoading"]),
-          contactToEdit() {
-            const id = this.$route.params.id;
-            const contacts = this.$store.state.contacts.contacts;
-            console.log(contacts)
-            const contactId = contacts.find(contact => contact._id == id);
-
-            return contactId
-          }
-      },
-
-
-
-
     methods: {
       handleSubmit(data) {
 
          editedContact(data)
       },
 
+
     },
+     computed: {
+
+          id() {
+            return this.$route.params.id;
+
+          },
+
+      }
+
+
 
 }
 </script>
