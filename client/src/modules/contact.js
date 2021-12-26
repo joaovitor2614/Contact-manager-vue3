@@ -1,5 +1,7 @@
 import axios from 'axios'
 import { useToast } from "vue-toastification";
+
+const BASE_URL = process.env.VUE_APP_BASEURL
 const contactModule = {
     state: () => ({
         contacts: [],
@@ -40,7 +42,7 @@ const contactModule = {
     actions: {
         async getContacts(context) {
 
-             const contacts = await axios.get('https://contact-manager-vue.herokuapp.com/api/contact')
+             const contacts = await axios.get(`${BASE_URL}/contact`)
              const { data } = contacts;
 
 
@@ -49,7 +51,7 @@ const contactModule = {
         },
         async createContact(context, contactData) {
             context.commit('setLoading');
-            const newContact = await axios.post('http://localhost:5000/api/contact', contactData)
+            const newContact = await axios.post(`${BASE_URL}/contact`, contactData)
             const { data } = newContact;
             context.commit('setLoadingOff');
 
@@ -57,7 +59,7 @@ const contactModule = {
        },
        async editContact(context, contactData) {
         context.commit('setLoading');
-        const editedContact = await axios.put(`http://localhost:5000/api/contact/${contactData._id}`,
+        const editedContact = await axios.put(`${BASE_URL}/contact/${contactData._id}`,
         contactData)
         const { data } = editedContact;
         context.commit('setLoadingOff');
@@ -68,7 +70,8 @@ const contactModule = {
         console.log('asasd')
         context.commit('setLoading');
         context.commit('deleteContact', id);
-        await axios.delete(`http://localhost:5000/api/contact/${id}`)
+
+        await axios.delete(`${BASE_URL}/contact/${id}`)
         context.commit('setLoadingOff');
 
 
