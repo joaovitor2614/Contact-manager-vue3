@@ -40,7 +40,7 @@ const contactModule = {
     actions: {
         async getContacts(context) {
 
-             const contacts = await axios.get('https://contact-manager-vue.herokuapp.com/contact')
+             const contacts = await axios.get('https://contact-manager-vue.herokuapp.com/api/contact')
              const { data } = contacts;
 
 
