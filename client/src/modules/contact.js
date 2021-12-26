@@ -1,7 +1,7 @@
 import axios from 'axios'
 import { useToast } from "vue-toastification";
 
-const BASE_URL = process.env.VUE_APP_BASEURL
+const BASE_URL = process.env.VUE_APP_API_ENDPOINT
 console.log('base url', BASE_URL)
 const contactModule = {
     state: () => ({
