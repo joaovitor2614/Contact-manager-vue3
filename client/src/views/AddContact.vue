@@ -8,7 +8,7 @@
           </h2>
       </div>
 
-    <ContactForm :handleSubmit="handleSubmit" :isLoading="this.$store.state.contacts.isLoading"  />
+    <ContactForm :handleSubmit="handleSubmit"   />
     <Loading v-if='this.$store.state.contacts.isLoading'  />
 
 
@@ -25,18 +25,16 @@ import ContactForm from '../components/ContactForm.vue'
 import { mapActions } from 'vuex'
 
 export default {
+
     components: { ContactForm, Loading },
-
-
-
     methods: {
       handleSubmit(data) {
          console.log(data)
          createContact(data)
       },
-        methods: {
-    ...mapActions(["createContact"]),
-  }
+
+
+
 
     },
 

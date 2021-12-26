@@ -1,6 +1,6 @@
 
 <template>
-  <form class="contact-form" @submit.prevent="handleSubmit(contactData)">
+  <form class="contact-form" @submit.prevent="createContact(contactData)">
     <div class="contact-form__group">
       <div class="contact-form__input">
           <input
@@ -42,7 +42,8 @@
 
 
     <div class="contact-form__input">
-       <input v-model="contactData.phone" type="text" class="input-field" />
+       <input v-model="contactData.phone"
+        type="text" class="input-field" />
        <label class="input-label">Phone number</label>
     </div>
 
@@ -53,13 +54,14 @@
     <div class="contact-form__action">
       <button
       class="action-btn"
-      :disabled="isLoading"
+
 
 
 
       >
              Adicionar contato
       </button>
+
     </div>
   </form>
 </template>
@@ -67,7 +69,11 @@
 <script>
 import { mapActions } from 'vuex'
 export default {
-  props: ['handleSubmit', 'isLoading'],
+  props: {
+    contact: {
+      default: ''
+    }
+  },
   data() {
     return {
       contactData: {
@@ -81,8 +87,11 @@ export default {
     }
   },
 
-  methods: {
-    ...mapActions(["createContact, editContact"]),
+
+   methods: {
+    ...mapActions(["createContact", "editContact"]),
   }
+
+
 }
 </script>
